@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    <title>Create a New Product</title>
+{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center min-vh-100 bg-light">
+    <div class="col-md-8 col-lg-6">
+        <div class="p-4 bg-white shadow rounded">
+            <h3 class="text-center mb-4">Create A New Product</h3>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="fname" class="form-label">Name</label>
+                        <input type="text" id="fname" name="name" class="form-control" placeholder="Product Name">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="text" id="price" name="price" class="form-control" placeholder="Price">
+                    </div>
+                    <div class="col-12">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea id="description" name="description" rows="4" class="form-control" placeholder="Enter product description"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <label for="image" class="form-label">Image</label>
+                        <input type="file" id="image" name="image" class="form-control">
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary px-5">Create</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
